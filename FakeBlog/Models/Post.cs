@@ -18,5 +18,7 @@ namespace FakeBlog.Models
         public DateTime PublishedAt { get; set; }
         public string URL { get; set; }
 
+        public ApplicationUser Owner { get; set; }
+
     }
 }
