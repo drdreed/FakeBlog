@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FakeBlog.DAL
+namespace FakeBlog.Controllers.Contracts
 {
-    interface IRepository
+    interface IPostRepository
     {
         // List of methods to help deliver features
         // Create
@@ -18,8 +18,9 @@ namespace FakeBlog.DAL
         List<Post> GetPostsFromUser(string userId);
 
         // Update
-        bool EditPost(int postId, string title, string body); // true: successful, false: not successful
-        bool PublishDraft(int postId, bool status);
+        void EditPostTitle(int postId, string title); 
+        void EditPostBody(int postId, string body);
+        void PublishDraft(int postId);
 
         // Delete
         bool RemovePost(int postId);
